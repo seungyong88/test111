@@ -20,8 +20,10 @@ jobs:
 
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
-      env:
-        CODECOV_TOKEN: b023f1ca-0119-4753-a902-dc7c8e548d00
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+      # env:
+      #   CODECOV_TOKEN: b023f1ca-0119-4753-a902-dc7c8e548d00
       with:
         directory: ./target/site/jacoco/ # 또는 다른 커버리지 보고서 경로
         flags: unittests # 플래그는 선택 사항
